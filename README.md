@@ -1,30 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, install the npm packages before starting the app 
 
 ```bash
-npm run dev
-# or
+yarn install
+or
+yarn
+```
+
+Then, run the development server:
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Finally, run test command to run unit tests:
+```bash
+yarn test
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+## Project Structure (Development/Design roadmap)
+1. Considered to utilise `NextJS` for build this project (tried something new + personal upskills)
+2. Implemented `Atomtic Design Methodlogy` to design React components
+3. `Unit tests` covered for key features development (Core functionalities covered, such as components, movement tracking and query validator function) 
+4. Using `React hooks` for components build (shorter and cleaner)
+5. Utilised `as less as pssoible` npm packages for building this web app (easier to maintain, no need to condier to o much update npm package versions issue)
+6. Tried to think the most better UX for this app (eg: using `dropdown selector` instead of manual typing for the action command (eg: LEFT), enhanced user experience I guess)
+7. The CSS naming convention is followed up with `CSS BEM Methodology`
+8. Tried to show a `axis` chart at the end of query for the visual result display
+9. stores `constants` in an independent folder
+10. considered to use `Bootstrap` for simple styling edition
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## References (For what I have learnt during this project):
+1. https://medium.com/frontend-digest/setting-up-testing-library-with-nextjs-a9702cbde32d
+2. https://seesparkbox.com/foundry/bem_by_example
+3. https://github.com/victornguyen/toy-robot
+4. https://getbootstrap.com/docs/4.0/utilities/text/
+5. https://github.com/uber/react-vis/blob/master/docs/xy-plot.md
+6. https://github.com/uber/react-vis/blob/master/docs/mark-series.md
+7. https://dev.to/dance2die/href-vs-src-in-html-10l7
+8. https://github.com/immerjs/immer
+9. https://immerjs.github.io/immer/docs/produce
+10. https://github.com/keyz/identity-obj-proxy#readme
+11. https://stackoverflow.com/questions/5629805/disabling-enter-key-for-form/37241980
+12. https://spectrum.chat/react-hook-form/help/validate-a-field-only-if-has-been-touched-or-if-a-input-is-dirty~7edb7af9-b4b4-4b8b-a469-04043d363501
+13. https://stackoverflow.com/questions/45567702/how-to-destruct-data-hyphen-cased-attributes-from-props
+14. https://testing-library.com/docs/dom-testing-library/api-events/
+15. https://stackoverflow.com/questions/52783144/how-do-you-test-for-the-non-existence-of-an-element-using-jest-and-react-testing

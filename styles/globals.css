@@ -1,9 +1,10 @@
+/* import bootstrap cdn */
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +14,26 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* layout */
+/* The naming convention is following up with CSS BEM methodology */
+.text-right {
+  text-align: right;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.app-name::before,
+.app-name::after {
+  content: ' - '
+}
+
+.flex-center__column { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
