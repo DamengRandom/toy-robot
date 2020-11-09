@@ -9,7 +9,7 @@ import QueryForm from "../../components/organisms/QueryForm";
 // positive path
 describe("<QueryForm /> component test", () => {
   beforeEach(async () => {
-    render(<QueryForm />);
+    render( < QueryForm / > );
 
     // Must input the valid string, otherwise will cost all tests failed, because query invlaid won't run the component JSX
     const queryInputDom = screen.getByTestId('queryInput');
@@ -55,7 +55,7 @@ describe("<QueryForm /> component test", () => {
   it('renders the reset button when user selected an action', async () => {
     // Arrange
     const firstSelectDom = screen.getByTestId("actionInput-0");
-    
+
     // Act
     await fireEvent.change(firstSelectDom, {
       target: {
@@ -72,7 +72,7 @@ describe("<QueryForm /> component test", () => {
   it('renders the result grid axis when user typed "REPORT" text', async () => {
     // Arrange
     const firstSelectDom = screen.getByTestId("actionInput-0");
-    
+
     // Act
     await fireEvent.change(firstSelectDom, {
       target: {
@@ -104,7 +104,7 @@ describe("<QueryForm /> component test", () => {
 describe("<QueryForm /> component test invalid query", () => {
   it('should not render any action command buttons when user typed invalid query string', async () => {
     // Arrange
-    render(<QueryForm />);
+    render( < QueryForm / > );
     // Act
     const queryInputDom = screen.getByTestId('queryInput');
     await fireEvent.change(queryInputDom, {

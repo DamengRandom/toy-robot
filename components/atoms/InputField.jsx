@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export default function InputField({
   label,
@@ -10,7 +10,7 @@ export default function InputField({
   classes,
   placeholder,
   handleChange,
-  disabled
+  disabled,
 }) {
   return (
     <div className="flex-center__column">
@@ -39,5 +39,5 @@ InputField.propTypes = {
   classes: PropTypes.string,
   placeholder: PropTypes.string,
   handleChange: PropTypes.func,
-  disabled: PropTypes.array
+  disabled: PropTypes.array,
 };

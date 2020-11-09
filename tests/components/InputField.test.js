@@ -1,5 +1,8 @@
-
-import { render, screen, cleanup } from "@testing-library/react";
+import {
+  render,
+  screen,
+  cleanup
+} from "@testing-library/react";
 import InputField from "../../components/atoms/InputField";
 
 describe("<InputField /> component test", () => {
@@ -12,9 +15,12 @@ describe("<InputField /> component test", () => {
       label: 'Input Text',
       placeholder: 'input placeholder'
     };
-  
-    render(<InputField {...props} />);
-  });
+
+    render( < InputField {
+        ...props
+      }
+      />);
+    });
 
   afterEach(() => {
     cleanup();

@@ -81,8 +81,10 @@ export default function QueryForm() {
         handleChange={handleTypeQuery}
         disabled={queryValidator(queryText)}
       />
-      {!queryValidator(queryText) && queryText !== '' && <p>{queryErrorMessage}</p>}
-      {queryValidator(queryText) &&
+      {!queryValidator(queryText) && queryText !== "" && (
+        <p>{queryErrorMessage}</p>
+      )}
+      {queryValidator(queryText) && (
         <>
           {actions.map((action, index) => (
             <div key={`${action}-${index}`}>
@@ -108,7 +110,7 @@ export default function QueryForm() {
           )}
           {result && <ResultChart result={result} />}
         </>
-      }
+      )}
     </div>
   );
 }

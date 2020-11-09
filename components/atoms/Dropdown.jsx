@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function Dropdown({ id, classes, handleChange, children }) {
   return (
@@ -12,11 +12,11 @@ export default function Dropdown({ id, classes, handleChange, children }) {
       {children}
     </select>
   );
-};
+}
 
 Dropdown.propTypes = {
   id: PropTypes.string,
   classes: PropTypes.string,
   handleChange: PropTypes.func,
-  children: PropTypes.node
+  children: PropTypes.node,
 };

@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 // constants
 import { actionCommands } from "../../constants";
 // components
 import Button from "../atoms/Button";
-import Dropdown from '../atoms/Dropdown';
+import Dropdown from "../atoms/Dropdown";
 
 export default function InputGroup({
   index,
@@ -22,10 +22,7 @@ export default function InputGroup({
           handleChange={(event) => handleTypeAction(event.target.value, index)}
         >
           {actionCommands.map((actionCommand) => (
-            <option
-              key={actionCommand}
-              value={actionCommand}
-            >
+            <option key={actionCommand} value={actionCommand}>
               {actionCommand}
             </option>
           ))}
@@ -44,7 +41,8 @@ export default function InputGroup({
             <Button
               id={`action-add-${index}`}
               classes="btn btn-success"
-              clickEvent={handleAddAction}>
+              clickEvent={handleAddAction}
+            >
               (&#43;)
             </Button>
           )}
@@ -59,5 +57,5 @@ InputGroup.propTypes = {
   actions: PropTypes.array,
   handleTypeAction: PropTypes.func,
   handleRemoveAction: PropTypes.func,
-  handleAddAction: PropTypes.func
+  handleAddAction: PropTypes.func,
 };
