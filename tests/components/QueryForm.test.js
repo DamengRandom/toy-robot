@@ -9,9 +9,9 @@ import QueryForm from "../../components/organisms/QueryForm";
 // positive path
 describe("<QueryForm /> component test", () => {
   beforeEach(async () => {
-    render( < QueryForm / > );
+    render( <QueryForm /> );
 
-    // Must input the valid string, otherwise will cost all tests failed, because query invlaid won't run the component JSX
+    // Must input the valid string, otherwise will cost all tests failed, because query invalid won't run the component JSX
     const queryInputDom = screen.getByTestId('queryInput');
     await fireEvent.change(queryInputDom, {
       target: {
@@ -47,7 +47,7 @@ describe("<QueryForm /> component test", () => {
     await fireEvent.click(addButton);
     const removeButton = screen.getByTestId("action-remove-0");
 
-    // Aseert
+    // Assert
     expect(removeButton).toBeInTheDocument();
     expect(removeButton).toHaveTextContent('(-)');
   });
@@ -63,7 +63,7 @@ describe("<QueryForm /> component test", () => {
       },
     });
 
-    // Aseert
+    // Assert
     expect(
       screen.getByText(/Reset/i)
     ).toBeInTheDocument();
@@ -93,7 +93,7 @@ describe("<QueryForm /> component test", () => {
 
     const resultDom = screen.getByTestId('result');
 
-    // Aseert
+    // Assert
     expect(resultDom).toBeInTheDocument();
     expect(resultDom.innerHTML.includes('axis: (0, 1)')).toBe(true);
     expect(resultDom.innerHTML.includes('NORTH')).toBe(true);
@@ -104,7 +104,7 @@ describe("<QueryForm /> component test", () => {
 describe("<QueryForm /> component test invalid query", () => {
   it('should not render any action command buttons when user typed invalid query string', async () => {
     // Arrange
-    render( < QueryForm / > );
+    render( <QueryForm /> );
     // Act
     const queryInputDom = screen.getByTestId('queryInput');
     await fireEvent.change(queryInputDom, {

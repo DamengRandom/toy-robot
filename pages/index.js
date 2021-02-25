@@ -20,7 +20,7 @@ export default function Home() {
         <Layout />
       </main>
 
-      <Footer classes={styles.footer}>
+      <Footer id="dashboardFooter" classes={styles.footer}>
         Developed by ~ 
         <a
           href="https://github.com/DamengRandom"

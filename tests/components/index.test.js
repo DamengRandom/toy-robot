@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import App from "../../pages/index";
 
-describe("App", () => {
+describe("Test App component", () => {
   beforeEach(() => {
     render(<App />);
   });

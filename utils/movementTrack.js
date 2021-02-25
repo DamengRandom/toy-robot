@@ -58,11 +58,11 @@ const movementTrack = (query, commands) => {
     }
   }
   
-  const getCurrentDirection = (direction) => {
+  const getCurrentDirection = direction => {
     var currentIndex;
     
-    for(var i = 0; i < directions.length; i++) {
-      if(directions[i] === direction) {
+    for (var i = 0; i < directions.length; i++) {
+      if (directions[i] === direction) {
         currentIndex = i;
       }
     }

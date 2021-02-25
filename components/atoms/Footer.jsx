@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Footer({ classes, children }) {
-  return <footer className={classes}>{children}</footer>;
+export default function Footer({ id, classes, children }) {
+  return <footer className={classes} data-testid={id}>{children}</footer>;
 }
 
 Footer.propTypes = {

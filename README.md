@@ -49,3 +49,10 @@ yarn test
 13. https://stackoverflow.com/questions/45567702/how-to-destruct-data-hyphen-cased-attributes-from-props
 14. https://testing-library.com/docs/dom-testing-library/api-events/
 15. https://stackoverflow.com/questions/52783144/how-do-you-test-for-the-non-existence-of-an-element-using-jest-and-react-testing
+
+
+Refactor actions in 2021:
+1. add more tests
+2. update css by using Bulma
+3. update README.md file
+4. refactor util functions
