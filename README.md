@@ -31,6 +31,7 @@ yarn test
 8. Tried to show a `axis` chart at the end of query for the visual result display
 9. stores `constants` in an independent folder
 10. considered to use `Bulma` for simple styling edition
+11. Utilised `immer` library working with immutable state easier
 
 
 ## References (For what I have learnt during this project):
@@ -49,10 +50,11 @@ yarn test
 13. https://stackoverflow.com/questions/45567702/how-to-destruct-data-hyphen-cased-attributes-from-props
 14. https://testing-library.com/docs/dom-testing-library/api-events/
 15. https://stackoverflow.com/questions/52783144/how-do-you-test-for-the-non-existence-of-an-element-using-jest-and-react-testing
+16. https://bulma.io/documentation/
 
 
 Refactor actions in 2021:
 1. added more tests
-2. updated css by using Bulma
+2. updated css by using Bulma (https://bulma.io/documentation/)
 3. updated README.md file
 4. refactored util functions
