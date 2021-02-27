@@ -17,7 +17,6 @@ describe("<Button /> component test", () => {
 
   afterEach(() => {
     cleanup();
-    jest.clearAllMocks();
   });
 
   it('renders the button text content as children', () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Button({ id, type, children, classes, clickEvent }) {
+export default function Button({ id, type, children, classes, clickEvent, isDisabled }) {
   return (
     <button
       id={id}
@@ -9,6 +9,7 @@ export default function Button({ id, type, children, classes, clickEvent }) {
       type={type}
       className={classes}
       onClick={clickEvent}
+      disabled={isDisabled}
     >
       {children}
     </button>

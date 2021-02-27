@@ -9,17 +9,19 @@ import Dropdown from "../atoms/Dropdown";
 export default function InputGroup({
   index,
   actions,
-  handleTypeAction,
+  handleActionSelect,
   handleRemoveAction,
   handleAddAction,
+  isResultShown,
 }) {
   return (
     <>
-      <div className="input-group mb-2">
+      <div className="columns box-margin">
         <Dropdown
           id={`actionInput-${index}`}
-          classes={"form-control"}
-          handleChange={(event) => handleTypeAction(event.target.value, index)}
+          classes={`column ${ actions.length - 1 === index ? 'is-two-thirds' : 'is-full'} button is-fullwidth auto-height initial-line-height`}
+          handleChange={(event) => handleActionSelect(event.target.value, index)}
+          isDisabled={isResultShown}
         >
           {actionCommands.map((actionCommand) => (
             <option key={actionCommand} value={actionCommand}>
@@ -27,26 +29,26 @@ export default function InputGroup({
             </option>
           ))}
         </Dropdown>
-        <div className="input-group-append">
-          {actions.length !== 1 && (
-            <Button
-              id={`action-remove-${index}`}
-              classes="btn btn-danger"
-              clickEvent={() => handleRemoveAction(index)}
-            >
-              (&#45;)
-            </Button>
-          )}
-          {actions.length - 1 === index && (
-            <Button
-              id={`action-add-${index}`}
-              classes="btn btn-success"
-              clickEvent={handleAddAction}
-            >
-              (&#43;)
-            </Button>
-          )}
-        </div>
+        {(actions.length - 1 === index && actions.length !== 1) && (
+          <Button
+            id={`action-remove-${index}`}
+            classes="column button is-fullwidth auto-height initial-line-height"
+            clickEvent={() => handleRemoveAction(index)}
+            isDisabled={isResultShown}
+          >
+            (&#45;)
+          </Button>
+        )}
+        {actions.length - 1 === index && (
+          <Button
+            id={`action-add-${index}`}
+            classes="column button is-fullwidth auto-height initial-line-height"
+            clickEvent={handleAddAction}
+            isDisabled={isResultShown}
+          >
+            (&#43;)
+          </Button>
+        )}
       </div>
     </>
   );
@@ -55,7 +57,7 @@ export default function InputGroup({
 InputGroup.propTypes = {
   index: PropTypes.number,
   actions: PropTypes.array,
-  handleTypeAction: PropTypes.func,
+  handleActionSelect: PropTypes.func,
   handleRemoveAction: PropTypes.func,
   handleAddAction: PropTypes.func,
 };

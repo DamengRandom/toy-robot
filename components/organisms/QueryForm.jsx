@@ -15,7 +15,7 @@ export default function QueryForm() {
   let result;
   const [queryText, setQueryText] = useState(""); // setup query (eg: PLACE 0,0,NORTH)
   const [actions, setActions] = useState([{ command: "" }]); // setup actions (eg: EAST|WEST|NORTH|SOUTH)
-  const lastActionCommand = actions[actions.length - 1].command.toUpperCase();
+  const lastActionCommand = actions.length > 0 ? actions[actions.length - 1].command.toUpperCase() : "Default";
   const isResultShown = actions.length > 0 && lastActionCommand === "REPORT";
 
   // set query text string value and store the query text state
@@ -25,7 +25,7 @@ export default function QueryForm() {
   };
 
   // set action command value and store inside action array
-  const handleTypeAction = (value, index) => {
+  const handleActionSelect = (value, index) => {
     let updatedActions = immer.produce(actions, (draft) => {
       draft[index].command = value;
     });
@@ -60,7 +60,7 @@ export default function QueryForm() {
       })
     );
     document.getElementById("actionInput-0").value =
-      "Please select an action here"; // because I didn't use any library, so I have to use this way to reset the dropdown select value to default value
+      `Click to select action`; // because I didn't use any library, so I have to use this way to reset the dropdown select value to default value
   };
 
   // get query result
@@ -75,7 +75,7 @@ export default function QueryForm() {
         id="queryInput"
         name={"query"}
         type="text"
-        classes={"mt-2 mb-3 full-width"}
+        classes={"input is-primary mt-4 mb-1"}
         value={queryText}
         placeholder="eg: PLACE 0,0,NORTH"
         handleChange={handleTypeQuery}
@@ -92,21 +92,24 @@ export default function QueryForm() {
                 index={index}
                 action={action}
                 actions={actions}
-                handleTypeAction={handleTypeAction}
+                handleActionSelect={handleActionSelect}
                 handleRemoveAction={handleRemoveAction}
                 handleAddAction={handleAddAction}
+                isResultShown={isResultShown}
               />
             </div>
           ))}
           {isResultShown && (
-            <Button
-              type="button"
-              classes={"btn btn-secondary full-width mt-3"}
-              clickEvent={handleResetActions}
-            >
-              Reset
-              {handleResultDisplay()}
-            </Button>
+            <div className="columns is-full box-margin my-6">
+              <Button
+                type="button"
+                classes={"column button is-danger is-outlined auto-height initial-line-height"}
+                clickEvent={handleResetActions}
+              >
+                Reset
+                {handleResultDisplay()}
+              </Button>
+            </div>
           )}
           {result && <ResultChart result={result} />}
         </>

@@ -14,7 +14,6 @@ describe("<Footer /> component test", () => {
 
   afterEach(() => {
     cleanup();
-    jest.clearAllMocks();
   });
 
   it('renders the footer text content as children', () => {

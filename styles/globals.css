@@ -1,5 +1,5 @@
-/* import bootstrap cdn */
-@import "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
+/* import Bulma cdn */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
 
 html,
 body {
@@ -26,6 +26,14 @@ a {
   width: 100%;
 }
 
+.auto-height {
+  height: auto;
+}
+
+.initial-line-height {
+  line-height: initial;
+}
+
 .app-name::before,
 .app-name::after {
   content: ' - '
@@ -36,4 +44,9 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* custom margin */
+.box-margin {
+  margin: 1em 0;
 }

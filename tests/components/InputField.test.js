@@ -24,7 +24,6 @@ describe("<InputField /> component test", () => {
 
   afterEach(() => {
     cleanup();
-    jest.clearAllMocks();
   });
 
   it('renders the input label', () => {

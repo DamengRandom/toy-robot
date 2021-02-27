@@ -7,7 +7,7 @@ export const appTitle = 'Toy Robot';
 export const queryHeading = 'Please write down the query of start location (x,y) and direction (NORTH | SOUTH | EAST | WEST), eg: PLACE 0,0,NORTH';
 // setup query error message
 export const queryErrorMessage = 'Oops, wrong query format, please follow with the correct format: (eg: PLACE 0,0,NORTH)';
-export const actionCommands = ['Please select an action here', 'MOVE', 'LEFT', 'RIGHT', 'REPORT'];
+export const actionCommands = ['Click to select action', 'MOVE', 'LEFT', 'RIGHT', 'REPORT'];
 // static (x,y) plots
 export const axisDataSet = [
   {x: 0, y: 0, size: 5, opacity: 0.1},

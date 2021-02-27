@@ -14,7 +14,7 @@ export default function InputField({
 }) {
   return (
     <div className="flex-center__column">
-      {label && <label>{label}</label>}
+      {label && <label className="subtitle is-4">{label}</label>}
       <input
         id={id}
         data-testid={id}

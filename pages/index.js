@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h2 className="app-name text-right mb-4 pb-4">{appTitle}</h2>
+        <h2 className="app-name title">{appTitle}</h2>
         <Layout />
       </main>
 

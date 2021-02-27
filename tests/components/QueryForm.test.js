@@ -8,12 +8,12 @@ import QueryForm from "../../components/organisms/QueryForm";
 
 // positive path
 describe("<QueryForm /> component test", () => {
-  beforeEach(async () => {
+  beforeEach(() => {
     render( <QueryForm /> );
 
     // Must input the valid string, otherwise will cost all tests failed, because query invalid won't run the component JSX
     const queryInputDom = screen.getByTestId('queryInput');
-    await fireEvent.change(queryInputDom, {
+    fireEvent.change(queryInputDom, {
       target: {
         value: "PLACE 0,0,NORTH"
       },
@@ -29,7 +29,7 @@ describe("<QueryForm /> component test", () => {
 
   it('renders the dropdown select button', () => {
     expect(
-      screen.getByText("Please select an action here")
+      screen.getByText("Click to select action")
     ).toBeInTheDocument();
   });
 
@@ -39,25 +39,25 @@ describe("<QueryForm /> component test", () => {
     expect(addButton).toHaveTextContent('(+)');
   });
 
-  it('renders the dropdown Remove button', async () => {
+  it('renders the dropdown Remove button', () => {
     // Arrange
     const addButton = screen.getByTestId("action-add-0");
 
     // Act
-    await fireEvent.click(addButton);
-    const removeButton = screen.getByTestId("action-remove-0");
+    fireEvent.click(addButton);
+    const removeButton = screen.getByTestId("action-remove-1");
 
     // Assert
     expect(removeButton).toBeInTheDocument();
     expect(removeButton).toHaveTextContent('(-)');
   });
 
-  it('renders the reset button when user selected an action', async () => {
+  it('renders the reset button when user selected an action', () => {
     // Arrange
     const firstSelectDom = screen.getByTestId("actionInput-0");
 
     // Act
-    await fireEvent.change(firstSelectDom, {
+    fireEvent.change(firstSelectDom, {
       target: {
         value: "REPORT"
       },
@@ -69,23 +69,23 @@ describe("<QueryForm /> component test", () => {
     ).toBeInTheDocument();
   });
 
-  it('renders the result grid axis when user typed "REPORT" text', async () => {
+  it('renders the result grid axis when user typed "REPORT" text', () => {
     // Arrange
     const firstSelectDom = screen.getByTestId("actionInput-0");
 
     // Act
-    await fireEvent.change(firstSelectDom, {
+    fireEvent.change(firstSelectDom, {
       target: {
         value: "MOVE"
       },
     });
 
     const addButton = screen.getByTestId("action-add-0");
-    await fireEvent.click(addButton);
+    fireEvent.click(addButton);
 
     const secondSelectDom = screen.getByTestId("actionInput-1");
 
-    await fireEvent.change(secondSelectDom, {
+    fireEvent.change(secondSelectDom, {
       target: {
         value: "REPORT"
       },
@@ -102,12 +102,12 @@ describe("<QueryForm /> component test", () => {
 
 // negative path
 describe("<QueryForm /> component test invalid query", () => {
-  it('should not render any action command buttons when user typed invalid query string', async () => {
+  it('should not render any action command buttons when user typed invalid query string', () => {
     // Arrange
     render( <QueryForm /> );
     // Act
     const queryInputDom = screen.getByTestId('queryInput');
-    await fireEvent.change(queryInputDom, {
+    fireEvent.change(queryInputDom, {
       target: {
         value: "PLACE 0, 0, NORTH" // query with space which is invalid query
       },

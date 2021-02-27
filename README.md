@@ -11,7 +11,7 @@ yarn
 Then, run the development server:
 
 ```bash
-yarn dev
+yarn run dev
 ```
 
 Finally, run test command to run unit tests:
@@ -20,17 +20,17 @@ yarn test
 ```
 
 
-## Project Structure (Development/Design roadmap)
+## Project Structure (Development/Design Road Map)
 1. Considered to utilise `NextJS` for build this project (tried something new + personal upskills)
-2. Implemented `Atomtic Design Methodlogy` to design React components
+2. Implemented `Atomtic Design Methodology` to design React components
 3. `Unit tests` covered for key features development (Core functionalities covered, such as components, movement tracking and query validator function) 
 4. Using `React hooks` for components build (shorter and cleaner)
-5. Utilised `as less as pssoible` npm packages for building this web app (easier to maintain, no need to condier to o much update npm package versions issue)
+5. Utilized `as less as possible` npm packages for building this web app (easier to maintain, no need to consider to do much update npm package versions issue)
 6. Tried to think the most better UX for this app (eg: using `dropdown selector` instead of manual typing for the action command (eg: LEFT), enhanced user experience I guess)
 7. The CSS naming convention is followed up with `CSS BEM Methodology`
 8. Tried to show a `axis` chart at the end of query for the visual result display
 9. stores `constants` in an independent folder
-10. considered to use `Bootstrap` for simple styling edition
+10. considered to use `Bulma` for simple styling edition
 
 
 ## References (For what I have learnt during this project):
@@ -52,7 +52,7 @@ yarn test
 
 
 Refactor actions in 2021:
-1. add more tests
-2. update css by using Bulma
-3. update README.md file
-4. refactor util functions
+1. added more tests
+2. updated css by using Bulma
+3. updated README.md file
+4. refactored util functions
