@@ -16,7 +16,7 @@ yarn run dev
 
 Finally, run test command to run unit tests:
 ```bash
-yarn test
+yarn run test
 ```
 
 
@@ -31,8 +31,8 @@ yarn test
 8. Tried to show a `axis` chart at the end of query for the visual result display
 9. stores `constants` in an independent folder
 10. considered to use `Bulma` for simple styling edition
-11. Utilised `immer` library working with immutable state easier
-
+11. Utilized `immer` library working with immutable state easier
+12. written query input validator function for validating the user input (query regex)
 
 ## References (For what I have learnt during this project):
 1. https://medium.com/frontend-digest/setting-up-testing-library-with-nextjs-a9702cbde32d

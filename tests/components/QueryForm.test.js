@@ -22,14 +22,11 @@ describe("<QueryForm /> component test", () => {
 
   afterEach(() => {
     cleanup();
-    jest.clearAllMocks();
   });
-
-  jest.clearAllMocks();
 
   it('renders the dropdown select button', () => {
     expect(
-      screen.getByText("Click to select action")
+      screen.getByText("Click to select an action")
     ).toBeInTheDocument();
   });
 
@@ -39,11 +36,22 @@ describe("<QueryForm /> component test", () => {
     expect(addButton).toHaveTextContent('(+)');
   });
 
+  it('plus button is not clickable when dropdown value is "Click to select an action"', () => {
+    // Arrange
+    const addButton = screen.queryByText("(+)");
+    const selector = screen.queryByText("Click to select an action");
+
+    // Assert
+    expect(selector).toBeInTheDocument();
+    expect(addButton).toHaveAttribute("disabled", "");
+  });
+
   it('renders the dropdown Remove button', () => {
     // Arrange
     const addButton = screen.getByTestId("action-add-0");
 
     // Act
+    fireEvent.change(screen.getByTestId('actionInput-0'), { target: { value: 'MOVE' } });
     fireEvent.click(addButton);
     const removeButton = screen.getByTestId("action-remove-1");
 

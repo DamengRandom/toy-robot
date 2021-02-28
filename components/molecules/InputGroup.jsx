@@ -19,7 +19,7 @@ export default function InputGroup({
       <div className="columns box-margin">
         <Dropdown
           id={`actionInput-${index}`}
-          classes={`column ${ actions.length - 1 === index ? 'is-two-thirds' : 'is-full'} button is-fullwidth auto-height initial-line-height`}
+          classes={`column ${(actions.length - 1 === index) ? 'is-two-thirds' : 'is-full'} button is-fullwidth auto-height initial-line-height`}
           handleChange={(event) => handleActionSelect(event.target.value, index)}
           isDisabled={isResultShown}
         >
@@ -39,12 +39,12 @@ export default function InputGroup({
             (&#45;)
           </Button>
         )}
-        {actions.length - 1 === index && (
+        {(actions.length - 1 === index) && (
           <Button
             id={`action-add-${index}`}
             classes="column button is-fullwidth auto-height initial-line-height"
             clickEvent={handleAddAction}
-            isDisabled={isResultShown}
+            isDisabled={isResultShown || actions[index].command === ''}
           >
             (&#43;)
           </Button>

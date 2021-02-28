@@ -60,7 +60,7 @@ export default function QueryForm() {
       })
     );
     document.getElementById("actionInput-0").value =
-      `Click to select action`; // because I didn't use any library, so I have to use this way to reset the dropdown select value to default value
+      `Click to select an action`; // because I didn't use any library, so I have to use this way to reset the dropdown select value to default value
   };
 
   // get query result
